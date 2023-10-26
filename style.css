@@ -1,0 +1,395 @@
+/* css reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "General Sans Medium", sans-serif;
+    text-decoration: none;
+    color: var(--white);
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    font-size: 16px;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+/* colors */
+:root {
+    --black: #000000;
+    --white: #fff;
+    --normal-gray: #a3a394;
+    --font-General-Sans: "General Sans", sans-serif;
+}
+
+body {
+    background-color: var(--black) !important;
+}
+
+#main {
+    width: 100%;
+    padding: 0 50px;
+    background-color: var(--black);
+}
+
+/* Mouse Follower */
+
+.mouseFollower {
+    width: 12px;
+    height: 12px;
+    background-color: var(--white);
+    border-radius: 50%;
+    position: absolute;
+    z-index: 999;
+    mix-blend-mode: difference;
+    pointer-events: none;
+    transition: all cubic-bezier(0.19, 1, 0.22, 1) 0.6s;
+}
+
+.bounding {
+    overflow: hidden;
+}
+
+.bounding .boundingElem {
+    transform: translateY(100%);
+}
+
+/* ----------------------
+    Hero Section CSS 
+---------------------- */
+
+.hero-section {
+    width: 100%;
+    height: 100vh;
+    padding-top: 110px;
+    position: relative;
+}
+
+.navbar {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 35px 50px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    /* background-color: var(--black); */
+    z-index: 999;
+    overflow-y: hidden;
+}
+
+.navbar a {
+    font-size: 1.1rem;
+}
+
+.navbar p {
+    cursor: pointer;
+}
+
+.navbar p span {
+    opacity: 0.7;
+    font-size: 0.9rem;
+}
+
+.heading {
+    margin-top: 120px;
+    width: fit-content;
+}
+
+.heading h1 {
+    font-size: 10vw;
+    text-transform: uppercase;
+    font-weight: 500;
+    opacity: 0.6;
+    line-height: 0.9;
+    padding-left: 10px;
+    transition: font-size 0.3s;
+}
+
+.heading .heading-des {
+    margin-left: 200px;
+}
+
+.heading p {
+    text-align: right;
+    margin-top: 20px;
+}
+
+.right-side-heading {
+    text-align: right;
+    margin-top: 8%;
+    line-height: 35px;
+    transition: 0.3s;
+}
+
+.right-side-heading .boundingElem {
+    display: block;
+}
+
+.hero-footer {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    bottom: 0;
+    padding: 30px 0;
+}
+
+.hero-footer a {
+    position: relative;
+}
+
+.hero-footer a i {
+    transform: rotate(-30deg);
+    font-size: 0.8rem;
+    margin-left: 5px;
+    transition: 0.4s;
+}
+
+.hero-footer a:hover i {
+    transform: rotate(0deg);
+}
+
+.hero-footer a::after {
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 1px;
+    background-color: var(--white);
+    top: 100%;
+    left: 0;
+    transition: 0.4s;
+}
+
+.hero-footer a:hover::after {
+    width: 100%;
+}
+
+.hero-section .down-arrows {
+    display: flex;
+    gap: 5px;
+}
+
+.hero-section .down-arrows i {
+    color: var(--black);
+    background-color: #b1b1b1;
+    padding: 6px 8px;
+    border-radius: 50%;
+    font-size: 0.9rem;
+    cursor: pointer;
+}
+
+/* ----------------------
+    Works Section CSS
+---------------------- */
+
+.works-section {
+    width: 100%;
+    height: 100vh;
+    padding-top: 15%;
+}
+
+.work-item {
+    width: 90%;
+    border-top: 1px solid #888;
+    padding: 4vw 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+.work-item:last-child {
+    border-bottom: 1px solid #888;
+}
+
+.work-item-heading {
+    font-size: 7vw;
+    text-transform: uppercase;
+    opacity: 0.6;
+    transition: 0.8s;
+}
+
+.work-item-year {
+    transition: 0.9s;
+}
+
+.works-section .work-item img {
+    height: 150%;
+    position: absolute;
+    z-index: 999;
+    pointer-events: none;
+    opacity: 0;
+    transform: translate(-50%, -50%);
+}
+
+.work-item:hover .work-item-heading,
+.work-item:hover .work-item-year {
+    opacity: 0.2;
+}
+
+.work-item:hover .work-item-heading {
+    padding-left: 4%;
+}
+
+/* ----------------------
+    About Section CSS
+---------------------- */
+
+.about-section {
+    width: 100%;
+    height: 80vh;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-top: 20%;
+}
+
+.about-section-inner {
+    width: 55%;
+    display: flex;
+    justify-content: space-between;
+    padding: 2%;
+    padding-right: 10%;
+}
+
+.about-section-inner .left {
+    width: 240px;
+    height: 240px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-right: 60px;
+}
+
+.about-section-inner .left img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.about-section-inner .right {
+    width: 60%;
+    font-size: 1.1rem;
+}
+
+.about-section-inner .right p {
+    font-family: var(--font-General-Sans);
+    line-height: 1.6;
+}
+
+.about-section-inner .right p span {
+    display: block;
+    font-size: 0.9rem;
+    color: var(--normal-gray);
+    opacity: 0.8;
+}
+
+.about-section-inner .right button {
+    cursor: pointer;
+    border: 1px solid var(--white);
+    outline: none;
+    background-color: transparent;
+    padding: 5px 22px;
+    border-radius: 50px;
+    font-size: 1.02rem;
+    margin-top: 25px;
+    transition: 0.3s linear;
+}
+
+.about-section-inner .right button:hover {
+    background-color: var(--white);
+    color: var(--black);
+}
+
+/* Footer Section */
+
+.footer-section {
+    width: 100%;
+}
+
+.footer-section .top {
+    padding-bottom: 10vw;
+}
+
+.footer-section .top p:first-child {
+    color: var(--white);
+    opacity: 0.6;
+    font-size: 0.84rem;
+    line-height: 30px;
+}
+
+.footer-section .top p:last-child {
+    cursor: pointer;
+    position: absolute;
+}
+
+.footer-section .top p:last-child i {
+    transform: rotate(-30deg);
+    font-size: 0.8rem;
+    margin-left: 5px;
+    transition: 0.4s;
+}
+
+.footer-section .top p:last-child:hover i {
+    transform: rotate(0deg);
+}
+
+.footer-section .top p:last-child::after {
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 1px;
+    background-color: var(--white);
+    top: 100%;
+    left: 0;
+    transition: 0.4s;
+}
+
+.footer-section .top p:last-child:hover::after {
+    width: 100%;
+}
+
+.footer-section .bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1vw 0;
+}
+
+.footer-section .bottom .left {
+    display: flex;
+    gap: 30px;
+}
+
+.footer-section .bottom .right {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
+
+.footer-section .bottom .right a {
+    font-size: 0.9rem;
+    position: relative;
+}
+
+.footer-section .bottom .right a::after {
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 1px;
+    background-color: var(--white);
+    top: 100%;
+    left: 0;
+    transition: 0.4s;
+}
+
+.footer-section .bottom .right a:hover::after {
+    width: 100%;
+}
